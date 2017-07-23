@@ -1,0 +1,27 @@
+#res-container, .topic-discuss {
+    margin: 5px 20px;
+}
+.res-wrapper {
+    margin: 20px 0px;
+}
+.res {
+    border: 1px solid black;
+}
+.res .r-head {
+    background: darkgray;
+    padding: 8px 8px 3px 8px;
+}
+.res .r-body {
+    padding: 3px 8px 8px 8px;
+    background: lightgray;
+}
+.r-head.first-author {
+    background: #49ccff;    
+}
+.r-body.r-hidden-body {
+    background: black;
+    color: white;
+}
+.res.res-type-status .r-body {
+    background: darkorange;
+}

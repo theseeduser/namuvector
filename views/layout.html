@@ -1,0 +1,118 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col topmenu">
+            <i class="fa fa-user"></i> {% if member %}<a href="/w/{{ member.username | encode_userdoc }}" class="user-link">{{ member.username }}</a>            <span class="hidden-sm-down"><a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a> <a href="/contribution/author/{{ member.username }}/document">기여목록(<a href="/contribution/author/{{ member.username }}/discuss">토론기여</a>)</a> <a href="/mypage">내 정보</a> <a href="/logout?redirect={{ url | url_encode }}">로그아웃</a>{% elif %}<a href="/login?redirect={{ url | url_encode }}" class="user-link not-logged-in">(로그인)</a>{% endif %} </span>
+            <span class="hidden-md-up"><a href="#" id="toggle-mobile-menu"><i class="fa fa-bars"></i></a></span>
+            <input type="input" id="searchInput" placeholder="검색">
+            <div class="hidden-md-up" style="display: none !important;" id="mobile-detail-menu">
+                <div class="menu-heading">사용자</div>
+                <ul>
+                    {% if member %}
+                    <li><a href="/w/{{ member.username | encode_userdoc }}">사용자 문서</a></li>
+                    <li><a href="/discuss/{{ member.username | encode_userdoc }}">사용자 토론</a></li>
+                    <li><a href="/contribution/author/{{ member.username }}/document">내 문서 기여</a></li>
+                    <li><a href="/contribution/author/{{ member.username }}/discuss">내 토론 기여</a></li>
+                    <li><a href="/mypage">내정보</a></li>
+                    <li><a href="/logout?redirect={{ url | url_encode }}">로그아웃</a></li>
+                    {% elif %}
+                    <li><a href="/login?redirect={{ url | url_encode }}">로그인</a></li>
+                    {% endif %}
+                </ul>
+                <div class="menu-heading">위키</div>
+                <ul>
+                    <li><a href="/RecentChanges">최근 변경</a></li>
+                    <li><a href="/RecentDiscuss">최근 토론</a></li>
+                    <li><a href="/random">랜덤 문서</a></li>
+                </ul>
+                <div class="menu-heading">도구</div>
+                <ul>
+                    <li><a href="/NeededPages">작성이 필요한 문서</a></li>
+                    <li><a href="/OrphanedPages">고립된 문서</a></li>
+                    <li><a href="/OldPages">방치된 문서</a></li>
+                    <li><a href="/ShortestPages">짧은 문서</a></li>
+                    <li><a href="/LongestPages">긴 문서</a></li>
+                    <li><a href="/BlockHistory">차단 내역</a></li>
+                    <li><a href="/RandomPage">랜덤 문서<strong>들</strong></a></li>
+                    <li><a href="/Upload">파일 올리기</a></li>
+                    <li><a href="/License">라이선스</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mainrow">
+        <div class="col hidden-sm-down sidemenu" style="max-width: 200px;">
+            <img src="img/logo.svg" class="logo-img"></img>
+            <div class="sidemenu-links">
+                <ul>
+                    <li><a href="/RecentChanges">최근 변경</a></li>
+                    <li><a href="/RecentDiscuss">최근 토론</a></li>
+                    <li><a href="/random">랜덤 문서</a></li>
+                </ul>
+                <div class="sidemenu-heading">도구</div>
+                <ul>
+                    <li><a href="/NeededPages">작성이 필요한 문서</a></li>
+                    <li><a href="/OrphanedPages">고립된 문서</a></li>
+                    <li><a href="/OldPages">방치된 문서</a></li>
+                    <li><a href="/ShortestPages">짧은 문서</a></li>
+                    <li><a href="/LongestPages">긴 문서</a></li>
+                    <li><a href="/BlockHistory">차단 내역</a></li>
+                    <li><a href="/RandomPage">랜덤 문서<strong>들</strong></a></li>
+                    <li><a href="/Upload">파일 올리기</a></li>
+                    <li><a href="/License">라이선스</a></li>
+                </ul>
+                <div class="sidemenu-heading">최근 변경</div>
+                <ul id="recents">
+                    <li>갱신중입니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col content-panel">
+            </ul>
+            <article class="rounded">
+                <div id="top"></div>
+                {% if document %}
+                <div class="btn-group float-md-right" role="group">
+                    <button class="btn btn-secondary" type="button" onclick="location.assign('/edit/{{ document|encode_doc }}');">편집</button>
+                    <button class="btn btn-secondary" type="button" onclick="location.assign('/discuss/{{ document|encode_doc }}');">토론</button>
+                    <button class="btn btn-secondary" type="button" onclick="location.assign('/history/{{ document|encode_doc }}');">역사</button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"></button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="/xref/{{ document|encode_doc }}" href="#">역링크</a>
+                            <a class="/move/{{ document|encode_doc }}" href="#">이동</a>
+                            <a class="/delete/{{ document|encode_doc }}" href="#"><span style="color: red;">삭제</span></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %} {% if user_document_discuss %}
+                <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button> 현재 진행중인 <a href="/discuss/{{ member.username | encode_userdoc }}">사용자 토론</a>이
+                    있습니다.
+                </div>
+                {% endif %}
+                <h1>{% skinInfo.title %}</h1>
+                <div class="article-content">
+
+                    {% block content %}{% endblock %}</div>
+                <div id="bottom"></div>
+            </article>
+            <footer class="rounded">
+                {% if skinInfo.viewName == 'wiki' and date %}
+                <ul>
+                    <li>이 문서는 {{ date | to_date | localdate('Y-m-d H:i:sO') }} 에 마지막으로 바뀌었습니다.</li>
+                    <li>모든 문서는 <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/3.0/">크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0</a>에
+                        따라 사용할 수 있습니다.</li>
+                </ul>
+                {% endif %} NamuVector Skin Copyrights (C) LiteHell 2017<br> Powered by the seed engine
+            </footer>
+        </div>
+    </div>
+</div>
+<div class="navigation rounded-top">
+    <div class="nav-button"><a href="#top"><i class="fa fa-angle-up"></i></a></div>
+    <div class="nav-button"><a href="#bottom"><i class="fa fa-angle-down"></i></a></div>
+</div>

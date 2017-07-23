@@ -1,0 +1,98 @@
+/* top menu */
+.topmenu {
+    text-align: right;
+    box-sizing: content-box;
+    padding: 5px 10px;
+    max-width: 100%;
+}
+.topmenu #searchInput {
+    max-width: 100%;
+}
+.topmenu .user-link {
+    color: goldenrod;
+}
+.topmenu .user-link.not-logged-in {
+    color: gray;
+}
+.topmenu a:not(.user-link) {
+    color: white;
+}
+/* mobile menu */
+#mobile-detail-menu {
+    text-align: initial;
+}
+#mobile-detail-menu ul {
+    list-style: none;
+    padding-left: 20px;
+}
+/* article */
+.content-panel .nav .nav-link {
+    background: white;
+}
+article {
+    padding: 15px;
+    background: white;
+    color: initial;
+}
+.article-content {
+    margin-top: 20px;
+}
+.mainrow {
+    margin-top: 5px;
+}
+/* body */
+body {
+    color: white;
+    background: #008275;
+    font-family: "'Malgun Gothic', 'NanumGothic', 'NotoSans CJK', 'KoPub Dotum', sans-serif";
+}
+/* footer */
+footer {
+    color: black;
+    background: white;
+    padding: 15px;
+    margin-top: 5px;
+}
+/* sidemneu */
+.sidemenu .logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 10px;
+}
+.sidemenu .sidemenu-links .sidemenu-heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+.sidemenu .sidemenu-links ul {
+    list-style-type: none;
+    padding-left: 12px;
+}
+.sidemenu .sidemenu-links li a, .sidemenu .sidemenu-links li {
+    color: white;
+}
+/* navigation bar */
+.navigation {
+    position: fixed;
+    display: table-row;
+    z-index: 1065;
+    bottom: 0;
+    right: 30px;
+    width: 100px;
+    height: 50px;
+    background: #008275;
+    color: white;
+}
+.navigation .nav-button {
+    display: table-cell;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: 0px;
+    text-align: center;
+    padding: 0px;
+    line-height: 50px;
+}
+.navigation .nav-button a {
+    color: white;
+    text-decoration: none;
+}
