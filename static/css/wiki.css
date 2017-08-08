@@ -2,52 +2,52 @@
 /* from https://namu.wiki/css/wiki.css */
 /* 문단 */
 
-.wiki-article h1,
-.wiki-article h2,
-.wiki-article h3,
-.wiki-article h4,
-.wiki-article h5,
-.wiki-article h6 {
+article .wiki-content h1,
+article .wiki-content h2,
+article .wiki-content h3,
+article .wiki-content h4,
+article .wiki-content h5,
+article .wiki-content h6 {
   margin: 1.2em 0 0.8em 0;
 }
 
-.wiki-article h1 { font-size: 2.3em; }
-.wiki-article h2 { font-size: 1.8em; }
-.wiki-article h3 { font-size: 1.6em; }
-.wiki-article h4 { font-size: 1.4em; }
-.wiki-article h5 { font-size: 1.2em; }
-.wiki-article h6 { font-size: 1.0em; }
+article .wiki-content h1 { font-size: 2.3em; }
+article .wiki-content h2 { font-size: 1.8em; }
+article .wiki-content h3 { font-size: 1.6em; }
+article .wiki-content h4 { font-size: 1.4em; }
+article .wiki-content h5 { font-size: 1.2em; }
+article .wiki-content h6 { font-size: 1.0em; }
 
-.wiki-article .wiki-edit-section {
+.wiki-edit-section {
   float: right;
   font-size: 1rem;
 }
 
 /* 서식 */
 
-.wiki-article del {
+article .wiki-content del {
   color: gray;
 }
-.wiki-article del:hover {
+article .wiki-content del:hover {
   color: black;
   background: gray;
   text-decoration: none;
 }
 
-.wiki-article .wiki-size.size-1 { font-size: 14pt; }
-.wiki-article .wiki-size.size-2 { font-size: 15pt; }
-.wiki-article .wiki-size.size-3 { font-size: 16pt; }
-.wiki-article .wiki-size.size-4 { font-size: 17pt; }
-.wiki-article .wiki-size.size-5 { font-size: 18pt; }
+article .wiki-content .wiki-size.size-1 { font-size: 14pt; }
+article .wiki-content .wiki-size.size-2 { font-size: 15pt; }
+article .wiki-content .wiki-size.size-3 { font-size: 16pt; }
+article .wiki-content .wiki-size.size-4 { font-size: 17pt; }
+article .wiki-content .wiki-size.size-5 { font-size: 18pt; }
 
-.wiki-article code {
+article .wiki-content code {
   padding: 2px;
   background-color: transparent;
   border: none;
   border-radius: 0;
 }
 
-.wiki-article pre {
+article .wiki-content pre {
   padding: 7px;
 
   background-color: #eeeeee;
@@ -58,7 +58,7 @@
   overflow-x: auto;
 }
 
-.wiki-article pre code {
+article .wiki-content pre code {
   padding: 0;
   background: none;
   border: none;
@@ -66,19 +66,19 @@
 
 /* 링크 */
 
-.wiki-article .not-exist {
+article .wiki-content .not-exist {
   color: red;
 }
 
-.wiki-article .wiki-self-link {
+article .wiki-content .wiki-self-link {
   font-weight: bold;
 }
 
-.wiki-article .wiki-link-external {
+article .wiki-content .wiki-link-external {
   color: #090;
 }
 
-.wiki-article .wiki-link-external:before {
+article .wiki-content .wiki-link-external:before {
   padding: 0px 0.15em;
   color: green;
   font-family: "FontAwesome";
@@ -88,53 +88,53 @@
 
 /* 이미지 */
 
-.wiki-article .wiki-content img {
+article .wiki-content .wiki-content img {
   display: inline-block;
   max-width: 100%;
 }
 
-.wiki-article .wiki-content img[align="middle"], .wiki-article .wiki-content img[align="center"] {
+article .wiki-content .wiki-content img[align="middle"], article .wiki-content .wiki-content img[align="center"] {
 	display: block;
 	margin: 0 auto;
 }
 
-.wiki-article .wiki-table img {
+article .wiki-content .wiki-table img {
   display: inline-block;
   max-width: initial;
 }
 
 /* 리스트 */
 
-.wiki-article .wiki-list {
+article .wiki-content .wiki-list {
   margin: 0.4em 0 0.4em 1.5em;
 }
 
-.wiki-article .wiki-list-decimal {
+article .wiki-content .wiki-list-decimal {
    list-style: decimal;
 }
 
-.wiki-article .wiki-list li p {
+article .wiki-content .wiki-list li p {
   margin-bottom: 0;
 }
 
 
-.wiki-article .wiki-list-alpha {
+article .wiki-content .wiki-list-alpha {
    list-style: lower-alpha;
 }
 
-.wiki-article .wiki-list-upper-alpha {
+article .wiki-content .wiki-list-upper-alpha {
    list-style: upper-alpha;
 }
 
-.wiki-article .wiki-list-roman {
+article .wiki-content .wiki-list-roman {
    list-style: lower-roman;
 }
 
-.wiki-article .wiki-list-upper-roman {
+article .wiki-content .wiki-list-upper-roman {
    list-style: upper-roman;
 }
 
-.wiki-article .wiki-list li {
+article .wiki-content .wiki-list li {
   margin: 0.4em 0;
   list-style: inherit !important;
   list-style-type: inherit !important;
@@ -142,31 +142,31 @@
 
 /* 각주 */
 
-.wiki-article .wiki-fn-content {
+article .wiki-content .wiki-fn-content {
   font-size: 0.8em;
   vertical-align: super;
 }
 
-.wiki-article .wiki-macro-footnote {
+article .wiki-content .wiki-macro-footnote {
   margin: 1.5em 0;
   padding: 0.5em 0;
   border-top: 1px solid #777777;
 }
 
-.wiki-article .footnote-list {
+article .wiki-content .footnote-list {
   line-height: 2em;
   display: block;
 }
 
 /* 들여쓰기 */
 
-.wiki-article .wiki-indent {
+article .wiki-content .wiki-indent {
   padding-left: 10px;
 }
 
 /* 인용문 */
 
-.wiki-article .wiki-quote {
+article .wiki-content .wiki-quote {
   padding: 1em calc(2em + 25px) 1em 1em;
   margin: 1em 0;
   background: #eeeeee;
@@ -178,28 +178,28 @@
 
 }
 
-.wiki-article .wiki-quote p {
+article .wiki-content .wiki-quote p {
   margin-bottom: 0;
 }
 
-.wiki-article .wiki-quote .wiki-indent {
+article .wiki-content .wiki-quote .wiki-indent {
   padding-left: 0;
 }
 
 /* 수평줄 */
 
-.wiki-article hr {
+article .wiki-content hr {
   margin: 0.5em 0;
   border-top: .0625rem solid #ccc;
 }
 
 /* 매크로 */
 
-/*.wiki-article .wiki-macro-toc {
+/*article .wiki-content .wiki-macro-toc {
   margin: 1rem 0 2rem -20px;
   font-size: 0.9rem;
 }*/
-.wiki-article .wiki-macro-toc {
+article .wiki-content .wiki-macro-toc {
   border: 1px solid #ccc;
   display: inline-block;
   padding: 12px 20px 18px 0px;
@@ -207,103 +207,103 @@
   font-size: 0.9rem;
 }
 
-.wiki-article .wiki-macro-toc:before {
+article .wiki-content .wiki-macro-toc:before {
   content: "목차";
   font-size: 18px;
   margin-left: 14px;
 }
 
-.wiki-article .toc-indent {
+article .wiki-content .toc-indent {
   padding-left: 20px;
 }
 
-.wiki-article .wiki-macro-toc > .toc-indent:first-of-type {
+article .wiki-content .wiki-macro-toc > .toc-indent:first-of-type {
   margin-top: 12px;
 }
 
-.wiki-article .toc-item {
+article .wiki-content .toc-item {
   display: block;
 }
 
-.wiki-article iframe {
+article .wiki-content iframe {
   display: block;
   max-width: 100%;
 }
 
 /* 테이블 */
 
-.wiki-article .wiki-table-wrap {
+article .wiki-content .wiki-table-wrap {
   display: block;
   max-width: 100%;
   overflow-x: auto;
   margin: 10px 0;
 }
 
-.wiki-article .wiki-table-wrap.table-center {
+article .wiki-content .wiki-table-wrap.table-center {
   margin: 10px auto;
 }
 
-.wiki-article .wiki-table {
+article .wiki-content .wiki-table {
   background-color: #f5f5f5;
   border-collapse: collapse;
   /*margin: 10px 0;*/
 }
 
-.wiki-article .table-center .wiki-table {
+article .wiki-content .table-center .wiki-table {
   margin: auto;
 }
 
-.wiki-article .table-right {
+article .wiki-content .table-right {
   margin-left: 20px;
   margin-bottom: 20px;
   float: right;
 }
 
 @media screen and (max-width: 420px) {
-  .wiki-article .table-right {
+  article .wiki-content .table-right {
     float: none;
     /*width: 100% !important;*/
     margin: 10px 0;
   }
 
-  /*.wiki-article .wiki-table {
+  /*article .wiki-content .wiki-table {
     white-space: nowrap;
   }*/
 }
 
-.wiki-article .wiki-table td {
+article .wiki-content .wiki-table td {
   padding: 5px 10px;
   border: 1px solid #dddddd;
 }
 
-.wiki-article .wiki-table td p {
+article .wiki-content .wiki-table td p {
   margin-bottom: 0;
 }
 
-/*.wiki-article table.table tbody tr {
+/*article .wiki-content table.table tbody tr {
   background-color: white;
 }*/
 
-.wiki-article .table td {
+article .wiki-content .table td {
   word-wrap: break-word;
 }
 
 /* 글상자 */
 
 
-.wiki-article .wiki-closure {
+article .wiki-content .wiki-closure {
   padding: 5px;
   margin: 10px 0;
   border: 1px solid #727272;
 }
 
-.wiki-article div.wiki-category {
+article .wiki-content div.wiki-category {
   border: 1px solid #777;
   padding: 5px;
   margin-top: 1em;
 }
 
-.wiki-article div.wiki-category h2 {
+article .wiki-content div.wiki-category h2 {
   display: inline-block;
   border: 0;
   padding: 0;
@@ -312,26 +312,26 @@
   font-size: inherit;
 }
 
-.wiki-article div.wiki-category ul {
+article .wiki-content div.wiki-category ul {
   display: inline-block;
   margin-bottom: 0;
   padding-left: 0 !important;
 }
 
-.wiki-article div.wiki-category h2:after {
+article .wiki-content div.wiki-category h2:after {
   content: ':';
 }
 
-.wiki-article div.wiki-category ul li {
+article .wiki-content div.wiki-category ul li {
   display: inline-block;
 }
 
-.wiki-article div.wiki-category ul li:after {
+article .wiki-content div.wiki-category ul li:after {
   content: '|';
   padding-left: 5px;
 }
 
-.wiki-article div.wiki-category ul li:last-child:after {
+article .wiki-content div.wiki-category ul li:last-child:after {
   display: none;
 }
 
@@ -344,23 +344,23 @@
   margin-top: 0;
 }
 
-.wiki-article em {
+article .wiki-content em {
   font-style: italic;
 }
 
-.wiki-article .wiki-file-image {
+article .wiki-content .wiki-file-image {
   margin-bottom: 20px;
 }
 
-.wiki-article .wiki-lazy-image {
+article .wiki-content .wiki-lazy-image {
   display: none;
 }
 
-.wiki-article .wiki-lazy-loading {
+article .wiki-content .wiki-lazy-loading {
   background-color:#888;
 }
 
-.wiki-article .syntax-wrapper {
+article .wiki-content .syntax-wrapper {
   padding-right: calc(2em + 20px);
   margin: 1em 0;
 
@@ -371,7 +371,7 @@
 
 }
 
-.wiki-article .syntax-wrapper > pre {
+article .wiki-content .syntax-wrapper > pre {
   padding: 0.7em 0.8em;
   margin: 0;
 
@@ -381,7 +381,7 @@
   font-size: 0.9rem;
 }
 
-.wiki-article .syntax-wrapper > .syntax-lines {
+article .wiki-content .syntax-wrapper > .syntax-lines {
   float: left;
   background-color: #c4dcff;
   border-radius: 0;
@@ -389,41 +389,41 @@
   text-align: right;
 }
 
-.wiki-article .syntax-wrapper > .syntax-lines div {
+article .wiki-content .syntax-wrapper > .syntax-lines div {
   font-family: monospace !important;
   line-height: 1.3em;
 }
 
-.wiki-article .syntax {
+article .wiki-content .syntax {
   font-family: monospace !important;
   white-space: pre;
   line-height: 1.3em;
 }
 
-.wiki-article .syntax span {
+article .wiki-content .syntax span {
   font-family: monospace !important;
 }
 
-.wiki-article .syntax .syntax-marker {
+article .wiki-content .syntax .syntax-marker {
 	border-top: 1px solid #f0f0d0;
 	background-color: #ffffe0;
 	border-bottom: 1px solid #f0f0d0;
 }
 
-.wiki-article .syntax .syntax-anchor {
+article .wiki-content .syntax .syntax-anchor {
 	color: #cc3333;
 }
 
-.wiki-article .syntax .syntax-comment {
+article .wiki-content .syntax .syntax-comment {
 	font-style: italic;
 	color: #999999;
 }
 
-.wiki-article .syntax .syntax-keyword {
+article .wiki-content .syntax .syntax-keyword {
 	font-weight: bold;
 	color: #6699cc;
 }
 
-.wiki-article .syntax .syntax-literal {
+article .wiki-content .syntax .syntax-literal {
 	color: #c08030;
 }
