@@ -6,17 +6,18 @@
 }
 .res {
     border: 1px solid black;
+    border-radius: 3px;
 }
 .res .r-head {
     background: darkgray;
-    padding: 8px 8px 3px 8px;
+    padding: 10px 15px 5px 15px;
 }
 .res .r-body {
-    padding: 3px 8px 8px 8px;
+    padding: 5px 15px 8px 15px;
     background: lightgray;
 }
 .r-head.first-author {
-    background: #49ccff;    
+    background: #5bc0de;   
 }
 .r-body.r-hidden-body {
     background: black;
