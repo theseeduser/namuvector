@@ -14,10 +14,10 @@
 }
 .res .r-body {
     padding: 5px 15px 8px 15px;
-    background: lightgray;
+    background: #ddd;
 }
 .r-head.first-author {
-    background: #5bc0de;   
+    background: #65d2f3;   
 }
 .r-body.r-hidden-body {
     background: black;
