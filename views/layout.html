@@ -79,9 +79,9 @@
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"></button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="/xref/{{ document|encode_doc }}" href="#">역링크</a>
-                            <a class="/move/{{ document|encode_doc }}" href="#">이동</a>
-                            <a class="/delete/{{ document|encode_doc }}" href="#"><span style="color: red;">삭제</span></a>
+                            <a href="/xref/{{ document|encode_doc }}" class="dropdown-item">역링크</a>
+                            <a href="/move/{{ document|encode_doc }}" class="dropdown-item">이동</a>
+                            <a href="/delete/{{ document|encode_doc }}" class="dropdown-item" style="color: red;">삭제</a>
                         </div>
                     </div>
                 </div>
