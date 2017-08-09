@@ -1,6 +1,6 @@
 {
     "override_views": [
-
+        "settings"
     ],
     "static_files": [
         "css/bootstrap.min.css",
@@ -21,7 +21,8 @@
         "js/jquery-ui.min.js",
         "js/layout.js",
         "js/tether.min.js",
-        "js/theseed.js"
+        "js/theseed.js",
+        "js/settings.js"
     ],
     "auto_js_targets": {
         "*": [
@@ -42,6 +43,11 @@
             },
             {
                 "path": "js/layout.js"
+            }
+        ],
+        "settings": [
+            {
+                "path": "js/settings.js"
             }
         ]
     },

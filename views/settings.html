@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="settings-form">
+    <div class="form-group">
+        <label>각주 표시</label>
+        <select class="form-control namuvector-setting" data-setname="footnoteDisplay">
+            <option value="skin-default" selected>스킨 기본값</option>
+            <option value="minerva">밑에서 올라오는 팝업 (미디어위키 MobileFrontend와 비슷한 방식)</option>
+            <option value="popover">팝오버 (각주에 포인터를 올리면 각주 주변에 말풍선처럼 뜸)</option>
+            <option value="popup">팝업</option>
+        </select>
+        <label>위키 문서내 취소선 표시</label>
+        <select class="form-control namuvector-setting" data-setname="hideDeletedOnWiki">
+            <option value="skin-default" selected>스킨 기본값</option>
+            <option value="true">숨기기</option>
+            <option value="false">보이기</option>
+            <option value="undelete">취소선 제거</option>
+        </select>
+        <label>토론내 취소선 표시</label>
+        <select class="form-control namuvector-setting" data-setname="hideDeletedOnTopic">
+            <option value="skin-default" selected>스킨 기본값</option>
+            <option value="true">숨기기</option>
+            <option value="false">보이기</option>
+            <option value="undelete">취소선 제거</option>
+        </select>
+        <br>
+        <button type="button" class="btn btn-primary" id="saveSkinSettings">설정 저장</button>
+        <p>참고 : 설정 저장 버튼을 누른 후 아무일도 일어나지 않으시나요? 정상입니다.</p>
+    </div>
+</div>
+{% endblock %}

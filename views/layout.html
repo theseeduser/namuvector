@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col topmenu">
-            <i class="fa fa-user"></i> {% if member %}<a href="/w/{{ member.username | encode_userdoc }}" class="user-link">{{ member.username }}</a>            <span class="hidden-sm-down"><a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a> <a href="/contribution/author/{{ member.username }}/document">기여목록(<a href="/contribution/author/{{ member.username }}/discuss">토론기여</a>)</a> <a href="/mypage">내 정보</a> <a href="/logout?redirect={{ url | url_encode }}">로그아웃</a>{% else %}<a href="/login?redirect={{ url | url_encode }}" class="user-link not-logged-in">(로그인)</a>{% endif %} </span>
+            <i class="fa fa-user"></i> {% if member %}<a href="/w/{{ member.username | encode_userdoc }}" class="user-link">{{ member.username }}</a>            <span class="hidden-sm-down"><a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a> <a href="/contribution/author/{{ member.username }}/document">기여목록(<a href="/contribution/author/{{ member.username }}/discuss">토론기여</a>)</a> <a href="/mypage">내 정보</a> <a href="/settings">스킨 설정</a> <a href="/logout?redirect={{ url | url_encode }}">로그아웃</a>{% else %}<a href="/login?redirect={{ url | url_encode }}" class="user-link not-logged-in">(로그인)</a> <a href="/settings">스킨 설정</a>{% endif %} </span>
             <span class="hidden-md-up"><a href="#" id="toggle-mobile-menu"><i class="fa fa-bars"></i></a></span>
             <input type="input" id="searchInput" placeholder="검색">
             <div class="hidden-md-up" style="display: none !important;" id="mobile-detail-menu">
@@ -13,8 +13,10 @@
                     <li><a href="/contribution/author/{{ member.username }}/document">내 문서 기여</a></li>
                     <li><a href="/contribution/author/{{ member.username }}/discuss">내 토론 기여</a></li>
                     <li><a href="/mypage">내정보</a></li>
+                    <li><a href="/settings">스킨 설정</a></li>
                     <li><a href="/logout?redirect={{ url | url_encode }}">로그아웃</a></li>
                     {% else %}
+                    <li><a href="/settings">스킨 설정</a></li>
                     <li><a href="/login?redirect={{ url | url_encode }}">로그인</a></li>
                     {% endif %}
                 </ul>
