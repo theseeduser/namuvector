@@ -113,13 +113,16 @@ footer {
 .minerva-fn-pop {
     position: fixed;
     bottom: 0;
+    right: 0;
     background: black;
     color: white;
-    padding: 20px;
+    padding: 10px 20px 40px 20px;
     width: 100%;
+    z-index: 1066;
 }
 .minerva-fn-title {
-    font-size: 20px 20px 40px 20px;
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
 }
 .minerva-close {
     float: right;
