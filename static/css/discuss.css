@@ -9,15 +9,15 @@
     border-radius: 3px;
 }
 .res .r-head {
-    background: darkgray;
+    background: #ccc;
     padding: 10px 15px 5px 15px;
 }
 .res .r-body {
     padding: 5px 15px 8px 15px;
-    background: #ddd;
+    background: #eceeef;
 }
 .r-head.first-author {
-    background: #65d2f3;   
+    background: #7adc7a;   
 }
 .r-body.r-hidden-body {
     background: black;
