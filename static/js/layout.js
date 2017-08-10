@@ -7,7 +7,9 @@ var defaultSettings = {
     // available values : true, false, 'undelete'
     hideDeletedOnWiki: false,
     // available values : true, false, 'undelete'
-    hideDeletedOnTopic: false
+    hideDeletedOnTopic: false,
+    // available values : true (uses lazyload), false (do nothing)
+    useLazyload: isMobile ? true : false
 };
 var NamuVector = {
     load: function (withDefault) {
@@ -26,6 +28,15 @@ var NamuVector = {
     }
 };
 $(function () {
+    $(".wiki-article img.wiki-lazy-image").removeClass('wiki-lazy-image').removeClass('wiki-lazy-loading').each(function () {
+        switch(NamuVector.load().useLazyload) {
+            case true:
+                $(this).lazyload({effect: "fadeIn"});
+            case false:
+            default:
+                $(this).attr('src', $(this).attr("data-original"));
+        }
+    });
     $("#toggle-mobile-menu").click(function (e) {
         e.preventDefault();
         $("#mobile-detail-menu").attr("style", (isMobileMenuHidden = !isMobileMenuHidden) ? "display: none !important" : "");
