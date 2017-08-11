@@ -27,9 +27,6 @@ function refreshRecentCard() {
     });
 }
 $(function () {
-    $(".wiki-article img.wiki-lazy-image").removeClass('wiki-lazy-image').removeClass('wiki-lazy-loading').each(function () {
-        $(this).attr('src', $(this).attr("data-original"));
-    });
     $("#searchInput").keypress(function (event) {
         if ((event.keyCode ? event.keyCode : event.which) != 13) {
             return;

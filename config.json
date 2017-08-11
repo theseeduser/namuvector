@@ -19,6 +19,7 @@
         "js/bootstrap.min.js",
         "js/jquery-3.2.1.min.js",
         "js/jquery-ui.min.js",
+        "js/jquery.lazyload.min.js",
         "js/layout.js",
         "js/tether.min.js",
         "js/theseed.js",
@@ -43,6 +44,9 @@
             },
             {
                 "path": "js/layout.js"
+            },
+            {
+                "path": "js/jquery.lazyload.min.js"
             }
         ],
         "settings": [
