@@ -39,6 +39,10 @@ article {
 .mainrow {
     margin-top: 5px;
 }
+/* table */
+article table {
+    table-layout: fixed;
+}
 /* body */
 body {
     background: #008275;
@@ -50,6 +54,7 @@ footer {
     background: white;
     padding: 15px;
     margin-top: 5px;
+    margin-bottom: 10px;
 }
 /* sidemneu */
 .sidemenu {
