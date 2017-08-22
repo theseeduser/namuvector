@@ -28,6 +28,7 @@ var NamuVector = {
     }
 };
 $(function () {
+    $('.alert.fade').addClass('show');
     $(".wiki-article img.wiki-lazy-image").removeClass('wiki-lazy-image').removeClass('wiki-lazy-loading').each(function () {
         switch(NamuVector.load().useLazyload) {
             case true:
