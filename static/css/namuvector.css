@@ -130,3 +130,7 @@ footer {
     float: right;
     cursor: pointer;
 }
+/* fix layout bugs */
+.breadcrumb.link-nav > li {
+    display: inline-block;
+}
