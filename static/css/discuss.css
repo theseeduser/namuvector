@@ -6,16 +6,15 @@
 }
 .res {
     border: 1px solid black;
-    border-radius: 3px;
     word-break: break-word;
 }
 .res .r-head {
     background: #ccc;
-    padding: 10px 15px 5px 15px;
+    padding: 8px 15px 7px 15px;
 }
 .res .r-body {
-    padding: 5px 15px 8px 15px;
-    background: #eceeef;
+    padding: 6px 15px 3px 15px;
+    background: rgb(243, 243, 243);
 }
 .r-head.first-author {
     background: #7adc7a;   
