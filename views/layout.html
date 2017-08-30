@@ -71,11 +71,35 @@
             </div>
         </div>
         <div class="col content-panel">
-            </ul>
+                {% if document %}
+                <ul class="nav nav-tabs justify-content-end wiki-actions-nav hidden-sm-down">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/wiki/{{ document|encode_doc }}">문서</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/edit/{{ document|encode_doc }}">편집</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/discuss/{{ document|encode_doc }}">토론</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/history/{{ document|encode_doc }}">역사</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/xref/{{ document|encode_doc }}">역링크</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/move/{{ document|encode_doc }}">이동</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/delete/{{ document|encode_doc }}" style="color: red;">삭제</a>
+                  </li>
+                </ul>
+                {% endif %} 
             <article class="rounded">
                 <div id="top"></div>
                 {% if document %}
-                <div class="btn-group float-md-right" role="group">
+                <div class="btn-group float-md-right hidden-md-up" role="group">
                     <button class="btn btn-secondary" type="button" onclick="location.assign('/edit/{{ document|encode_doc }}');">편집</button>
                     <button class="btn btn-secondary" type="button" onclick="location.assign('/discuss/{{ document|encode_doc }}');">토론</button>
                     <button class="btn btn-secondary" type="button" onclick="location.assign('/history/{{ document|encode_doc }}');">역사</button>
@@ -89,7 +113,8 @@
                         </div>
                     </div>
                 </div>
-                {% endif %} {% if user_document_discuss %}
+                {% endif %}
+                {% if user_document_discuss %}
                 <div class="alert alert-info">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

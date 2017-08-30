@@ -45,7 +45,7 @@ article table {
 }
 /* body */
 body {
-    background: #008275;
+    background: #808080;
     font-family: "'Malgun Gothic', 'NanumGothic', 'NotoSans CJK', 'KoPub Dotum', sans-serif";
 }
 /* footer */
@@ -133,4 +133,8 @@ footer {
 /* fix layout bugs */
 .breadcrumb.link-nav > li {
     display: inline-block;
+}
+/* wiki action buttons */
+.wiki-actions-nav .nav-item .nav-link:not(.active){
+    background: rgba(255,255,255,0.5);
 }
