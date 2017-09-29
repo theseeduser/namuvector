@@ -3,7 +3,7 @@
         <div class="col topmenu">
             <i class="fa fa-user"></i> {% if member %}<a href="/w/{{ member.username | encode_userdoc }}" class="user-link">{{ member.username }}</a>            <span class="hidden-sm-down"><a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a> <a href="/contribution/author/{{ member.username }}/document">기여목록(<a href="/contribution/author/{{ member.username }}/discuss">토론기여</a>)</a> <a href="/mypage">내 정보</a> <a href="/settings">스킨 설정</a> <a href="/logout?redirect={{ url | url_encode }}">로그아웃</a>{% else %}<a href="/login?redirect={{ url | url_encode }}" class="user-link not-logged-in">(로그인)</a> <a href="/settings">스킨 설정</a>{% endif %} </span>
             <span class="hidden-md-up"><a href="#" id="toggle-mobile-menu"><i class="fa fa-bars"></i></a></span>
-            <input type="input" id="searchInput" placeholder="검색">
+            <input type="input" class="searchInput hidden-md-up" placeholder="검색">
             <div class="hidden-md-up" style="display: none !important;" id="mobile-detail-menu">
                 <div class="menu-heading">사용자</div>
                 <ul>
@@ -22,6 +22,7 @@
                 </ul>
                 <div class="menu-heading">위키</div>
                 <ul>
+                    <li><a href="/">메인페이지</a></li>
                     <li><a href="/RecentChanges">최근 변경</a></li>
                     <li><a href="/RecentDiscuss">최근 토론</a></li>
                     <li><a href="/random">랜덤 문서</a></li>
@@ -42,7 +43,7 @@
         </div>
     </div>
     <div class="row mainrow">
-        <div class="col hidden-sm-down sidemenu" style="max-width: 200px;">
+        <div class="col hidden-sm-down sidemenu" style="max-width: 180px;">
             <a href="/">
                 <img src="/skins/namuvector/img/logo.svg" class="logo-img"></img>
             </a>
@@ -73,30 +74,33 @@
         <div class="col content-panel">
                 {% if document %}
                 <ul class="nav nav-tabs justify-content-end wiki-actions-nav hidden-sm-down">
-                  <li class="nav-item">
+                  <li class="nav-item wiki-w-nav">
                     <a class="nav-link" href="/wiki/{{ document|encode_doc }}">문서</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-edit-nav">
                     <a class="nav-link" href="/edit/{{ document|encode_doc }}">편집</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-discuss-nav wiki-thread-nav">
                     <a class="nav-link" href="/discuss/{{ document|encode_doc }}">토론</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-history-nav">
                     <a class="nav-link" href="/history/{{ document|encode_doc }}">역사</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-xref-nav">
                     <a class="nav-link" href="/xref/{{ document|encode_doc }}">역링크</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-move-nav">
                     <a class="nav-link" href="/move/{{ document|encode_doc }}">이동</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item wiki-delete-nav">
                     <a class="nav-link" href="/delete/{{ document|encode_doc }}" style="color: red;">삭제</a>
+                  </li>
+                  <li calss="nav-item search-tab">
+                    <input type="input" class="searchInput" placeholder="검색">
                   </li>
                 </ul>
                 {% endif %} 
-            <article class="rounded">
+            <article>
                 <div id="top"></div>
                 {% if document %}
                 <div class="btn-group float-md-right hidden-md-up" role="group">
@@ -109,6 +113,7 @@
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                             <a href="/xref/{{ document|encode_doc }}" class="dropdown-item">역링크</a>
                             <a href="/move/{{ document|encode_doc }}" class="dropdown-item">이동</a>
+                            <a href="/w/{{ document|encode_doc }}" class="dropdown-item">문서</a>
                             <a href="/delete/{{ document|encode_doc }}" class="dropdown-item" style="color: red;">삭제</a>
                         </div>
                     </div>

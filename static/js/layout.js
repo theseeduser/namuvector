@@ -42,11 +42,13 @@ $(function () {
         e.preventDefault();
         $("#mobile-detail-menu").attr("style", (isMobileMenuHidden = !isMobileMenuHidden) ? "display: none !important" : "");
     });
-    var pageInfo = {
-        wiki: location.pathname.indexOf('/w/') == 0,
-        topic: location.pathname.indexOf('/topic/') == 0,
-        discuss: location.pathname.indexOf('/discuss/') == 0
-    };
+    if(/^\/([a-zA-Z0-9_])\//.test(location.pathname)) {
+        pageInfo.actionName = /^\/([a-zA-Z0-9_])\//.exec(location.pathname)[1];
+        pageInfo.wiki = pageInfo.actionName == 'w';
+        pageInfo.topic = pageInfo.actionName == 'topic';
+        pageInfo.discuss = pageInfo.actionName == 'discuss' || pageInfo.actionName == 'thread';
+    }
+    $('.wiki-' + pageInfo.actionName + '-nav').addClass('active');
     function customizeWikiCSS() {
         var css = '',
             pathname = location.pathname,

@@ -4,7 +4,7 @@
     box-sizing: content-box;
     padding: 5px 10px;
     max-width: 100%;
-    color: white;
+    font-size: 0.75em;
 }
 .topmenu #searchInput {
     max-width: 100%;
@@ -15,12 +15,8 @@
 .topmenu .user-link.not-logged-in {
     color: gray;
 }
-.topmenu a:not(.user-link) {
-    color: white;
-}
 /* mobile menu */
 #mobile-detail-menu {
-    color: white;
     text-align: initial;
 }
 #mobile-detail-menu ul {
@@ -45,7 +41,7 @@ article table {
 }
 /* body */
 body {
-    background: #808080;
+    background: linear-gradient(#94C7C1,#AACFCD);
     font-family: "'Malgun Gothic', 'NanumGothic', 'NotoSans CJK', 'KoPub Dotum', sans-serif";
 }
 /* footer */
@@ -58,7 +54,7 @@ footer {
 }
 /* sidemneu */
 .sidemenu {
-    color: white;
+    font-size: 0.8em;
 }
 .sidemenu .logo-img {
     max-width: 100%;
@@ -66,15 +62,15 @@ footer {
     margin-bottom: 10px;
 }
 .sidemenu .sidemenu-links .sidemenu-heading {
-    font-size: 20px;
+    font-size: 0.95em;
+    padding: 0.25em 0 0 3px;
+    margin: 0 0 3px 9px;
     font-weight: bold;
+    border-bottom: 1px solid;
 }
 .sidemenu .sidemenu-links ul {
     list-style-type: none;
     padding-left: 12px;
-}
-.sidemenu .sidemenu-links li a, .sidemenu .sidemenu-links li {
-    color: white;
 }
 /* navigation bar */
 .navigation {
@@ -86,7 +82,6 @@ footer {
     width: 100px;
     height: 50px;
     background: #005f55;
-    color: white;
 }
 .navigation .nav-button {
     display: table-cell;
@@ -99,7 +94,6 @@ footer {
     line-height: 50px;
 }
 .navigation .nav-button a {
-    color: white;
     text-decoration: none;
 }
 /* edit page */
@@ -136,5 +130,23 @@ footer {
 }
 /* wiki action buttons */
 .wiki-actions-nav .nav-item .nav-link:not(.active){
+    font-size: 0.8em;
     background: rgba(255,255,255,0.5);
+}
+.wiki-actions-nav .nav-item .nav-link {
+    border-radius: 0px !important;
+    border: 0px;
+}
+.wiki-actions-nav .nav-item .nav-link:hover {
+    background: rgba(255,255,255,0.7);
+}
+.wiki-actions-nav .nav-item.search-tab {
+    background: none;
+    padding: 0px 10px;
+}
+.wiki-actions-nav .nav-item.active {
+    background: white;
+}
+.wiki-actions-nav .nav-item.search-tab input {
+    display: inline;
 }
