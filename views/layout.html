@@ -12,7 +12,7 @@
                     <li><a href="/discuss/{{ member.username | encode_userdoc }}">사용자 토론</a></li>
                     <li><a href="/contribution/author/{{ member.username }}/document">내 문서 기여</a></li>
                     <li><a href="/contribution/author/{{ member.username }}/discuss">내 토론 기여</a></li>
-                    <li><a href="/mypage">내정보</a></li>
+                    <li><a href="/member/mypage">내정보</a></li>
                     <li><a href="/settings">스킨 설정</a></li>
                     <li><a href="/logout?redirect={{ url | url_encode }}">로그아웃</a></li>
                     {% else %}
@@ -39,16 +39,19 @@
                     <li><a href="/Upload">파일 올리기</a></li>
                     <li><a href="/License">라이선스</a></li>
                     {%if perms.has('ipacl') %}
-                        <a href="/admin/ipacl" class="dropdown-item">IPACL</a>
+                        <a href="/admin/ipacl">IPACL</a>
                     {% endif %}
                     {%if perms.has('suspend_account') %}
-                        <a href="/admin/suspend_account" class="dropdown-item">계정 차단</a>
+                        <a href="/admin/suspend_account">계정 차단</a>
+                    {% endif %}
+                    {%if perms.has('aclgroup') %}
+                        <a href="/aclgroup">ACL Group</a>
                     {% endif %}
                     {%if perms.has('grant') %}
-                        <a href="/admin/grant" class="dropdown-item">권한 부여</a>
+                        <a href="/admin/grant">권한 부여</a>
                     {% endif %}
                     {%if perms.has('login_history') %}
-                        <a href="/admin/login_history" class="dropdown-item">로그인 기록 조회</a>
+                        <a href="/admin/login_history">로그인 기록 조회</a>
                     {% endif %}
                 </ul>
             </div>
@@ -76,6 +79,21 @@
                     <li><a href="/RandomPage">랜덤 문서<strong>들</strong></a></li>
                     <li><a href="/Upload">파일 올리기</a></li>
                     <li><a href="/License">라이선스</a></li>
+                    {%if perms.has('ipacl') %}
+                        <a href="/admin/ipacl"">IPACL</a>
+                    {% endif %}
+                    {%if perms.has('suspend_account') %}
+                        <a href="/admin/suspend_account"">계정 차단</a>
+                    {% endif %}
+                    {%if perms.has('aclgroup') %}
+                        <a href="/aclgroup">ACL Group</a>
+                    {% endif %}
+                    {%if perms.has('grant') %}
+                        <a href="/admin/grant">권한 부여</a>
+                    {% endif %}
+                    {%if perms.has('login_history') %}
+                        <a href="/admin/login_history">로그인 기록 조회</a>
+                    {% endif %}
                 </ul>
                 <div class="sidemenu-heading">최근 변경</div>
                 <ul id="recents">
