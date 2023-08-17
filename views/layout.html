@@ -38,6 +38,18 @@
                     <li><a href="/RandomPage">랜덤 문서<strong>들</strong></a></li>
                     <li><a href="/Upload">파일 올리기</a></li>
                     <li><a href="/License">라이선스</a></li>
+                    {%if perms.has('ipacl') %}
+                        <a href="/admin/ipacl" class="dropdown-item">IPACL</a>
+                    {% endif %}
+                    {%if perms.has('suspend_account') %}
+                        <a href="/admin/suspend_account" class="dropdown-item">계정 차단</a>
+                    {% endif %}
+                    {%if perms.has('grant') %}
+                        <a href="/admin/grant" class="dropdown-item">권한 부여</a>
+                    {% endif %}
+                    {%if perms.has('login_history') %}
+                        <a href="/admin/login_history" class="dropdown-item">로그인 기록 조회</a>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -138,10 +150,8 @@
                 {% if skinInfo.viewName == 'wiki' and date %}
                 <ul>
                     <li>이 문서는 {{ date | to_date | localdate('Y-m-d H:i:sO') }} 에 마지막으로 바뀌었습니다.</li>
-                    <li>모든 문서는 <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/4.0/">크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0</a>에
-                        따라 사용할 수 있습니다.</li>
                 </ul>
-                {% endif %} NamuVector Skin Copyrights (C) LiteHell 2017<br> Powered by the seed engine
+                {% endif %} <a href="//github.com/LiteHell/theseed-skin-namuvector">namuvector</a> | <a href="//theseed.io/">the seed</a>
             </footer>
         </div>
     </div>
